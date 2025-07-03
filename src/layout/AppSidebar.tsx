@@ -1,8 +1,8 @@
-import { useLocaliztionStore } from "@/store/useLocaliztionStore";
 import { BadgePercentIcon, GiftIcon, UserIcon } from "lucide-react";
 import { useCallback } from "react";
 import { Link, useLocation } from "react-router";
 import { useSidebar } from "../context/SidebarContext";
+import { useLocaliztionStore } from "@/store/useLocaliztionStore";
 
 type NavItem = {
   name: string;
