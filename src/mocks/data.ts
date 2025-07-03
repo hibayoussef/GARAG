@@ -1,7 +1,8 @@
 export const mockUserProfile = {
   id: "user-123",
-  name: "Mohamed Ahmed",
-  avatar: "/avatars/user-123.jpg",
+  name: "Hiba Youssef",
+  avatar:
+    "https://static.vecteezy.com/system/resources/thumbnails/038/962/461/small/ai-generated-caucasian-successful-confident-young-businesswoman-ceo-boss-bank-employee-worker-manager-with-arms-crossed-in-formal-wear-isolated-in-white-background-photo.jpg",
   level: 3,
   xp: 750,
   xpToNextLevel: 1000,
