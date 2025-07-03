@@ -12,7 +12,7 @@ const RewardHeader = () => (
       </h3>
     </div>
 
-    <div className="px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary/10 text-primary dark:bg-primary/20 dark:text-primary/90">
+    <div className="px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary/10 text-primary dark:bg-primary/20 dark:text-white">
       Tier: Platinum
     </div>
   </div>

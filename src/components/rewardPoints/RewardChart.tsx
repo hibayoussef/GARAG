@@ -49,7 +49,7 @@ const RewardChart = ({ progress }: { progress: number | undefined }) => {
         >
           {progress}%
         </motion.div>
-        <div className="text-xs font-medium text-primary/80 dark:text-primary/90">
+        <div className="text-xs font-medium text-primary/80 dark:text-white">
           Your Progress
         </div>
       </div>

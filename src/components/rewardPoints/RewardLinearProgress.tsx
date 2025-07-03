@@ -13,7 +13,7 @@ const RewardLinearProgress = ({
   <div className="space-y-1.5">
     <div className="flex justify-between text-xs">
       <span className="text-gray-600/90 dark:text-gray-300/90">{currentPoints} Points</span>
-      <span className="font-medium text-primary/90 dark:text-primary/90">
+      <span className="font-medium text-primary/90 dark:text-white">
         {progress}% Complete
       </span>
     </div>
