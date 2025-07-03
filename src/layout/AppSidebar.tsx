@@ -87,19 +87,20 @@ const AppSidebar: React.FC = () => {
           !isExpanded && !isHovered ? "lg:justify-center" : "justify-center"
         }`}
       >
-        <Link to="/" className="flex items-center justify-center">
-          <img src="/images/logo/SANN.png" alt="Logo" width={50} height={50} />
+        <Link to="/" className="flex items-center gap-2">
+          <div className="w-10 h-10 rounded-full bg-[#465FFF] flex items-center justify-center">
+            <svg viewBox="0 0 24 24" className="w-6 h-6 text-white">
+              <path
+                fill="currentColor"
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-5-9h10v2H7z"
+              />
+            </svg>
+          </div>
           {(isExpanded || isHovered || isMobileOpen) && (
-            <span
-              className="text-xl font-bold text-[#465FFF] hidden sm:block"
-              style={{ fontFamily: "sans-serif" }}
-            >
-              Books
-            </span>
+            <span className="font-bold text-[#465FFF] text-xl">Garage</span>
           )}
         </Link>
       </div>
-
       <div className="flex flex-col px-2 overflow-y-auto duration-300 ease-linear no-scrollbar">
         <nav className="mb-6">
           <div className="flex flex-col gap-4">
