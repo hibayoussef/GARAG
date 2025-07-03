@@ -1,4 +1,3 @@
-// أنواع بيانات المستخدم
 export type User = {
   id: number;
   name: string;
@@ -8,7 +7,6 @@ export type User = {
   maxXp: number;
 };
 
-// أنواع بيانات العروض (Benefits)
 export type Benefit = {
   id: number;
   title: string;
@@ -17,7 +15,6 @@ export type Benefit = {
   cta: "Claim" | "View" | "Redeem";
 };
 
-// أنواع بيانات النقاط (Rewards)
 export type RewardPoints = {
   points: number;
   maxPoints: number;

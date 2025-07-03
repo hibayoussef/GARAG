@@ -1,90 +1,21 @@
 // components/BenefitsSection.tsx
-import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import {
-  FiTag,
-  FiShoppingBag,
-  FiCreditCard,
-  FiCoffee,
-  FiPercent,
-  FiStar,
-  FiGift,
-} from "react-icons/fi";
+import { FiGift } from "react-icons/fi";
 import BenefitsSkeleton from "@/components/benfit/BenefitsSkeleton";
 import BenefitCard from "@/components/benfit/BenefitCard";
+import { useBenefits, useClaimBenefit } from "@/hooks/useBenefits.ts";
+
 
 const BenefitsSection = () => {
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => setIsLoading(false), 1500);
-    return () => clearTimeout(timer);
-  }, []);
-
-  const benefits = [
-    {
-      icon: <FiTag className="w-6 h-6" />,
-      title: "Exclusive Discount",
-      description: "Get 20% off on all products for a limited time",
-      cta: "View",
-      colors: {
-        light: "from-blue-400 to-blue-600",
-        dark: "dark:from-blue-500 dark:to-blue-700",
-      },
-    },
-    {
-      icon: <FiShoppingBag className="w-6 h-6" />,
-      title: "Free Shipping",
-      description: "Free shipping for orders over 200 SAR",
-      cta: "View",
-      colors: {
-        light: "from-green-400 to-green-600",
-        dark: "dark:from-green-500 dark:to-green-700",
-      },
-    },
-    {
-      icon: <FiCreditCard className="w-6 h-6" />,
-      title: "Secure Payment",
-      description: "Get extra 5% off when paying by credit card",
-      cta: "View",
-      colors: {
-        light: "from-purple-400 to-purple-600",
-        dark: "dark:from-purple-500 dark:to-purple-700",
-      },
-    },
-    {
-      icon: <FiCoffee className="w-6 h-6" />,
-      title: "Free Surprise",
-      description: "Receive a free gift with every order",
-      cta: "View",
-      colors: {
-        light: "from-amber-400 to-amber-600",
-        dark: "dark:from-amber-500 dark:to-amber-700",
-      },
-    },
-    {
-      icon: <FiPercent className="w-6 h-6" />,
-      title: "Delivery Discounts",
-      description: "50% off delivery fee on your first order",
-      cta: "View",
-      colors: {
-        light: "from-pink-400 to-pink-600",
-        dark: "dark:from-pink-500 dark:to-pink-700",
-      },
-    },
-    {
-      icon: <FiStar className="w-6 h-6" />,
-      title: "Premium Membership",
-      description: "Early access to special member offers",
-      cta: "View",
-      colors: {
-        light: "from-indigo-400 to-indigo-600",
-        dark: "dark:from-indigo-500 dark:to-indigo-700",
-      },
-    },
-  ];
+  const { data: benefits, isLoading, isError } = useBenefits();
+  const { mutate: claimBenefit } = useClaimBenefit();
 
   if (isLoading) return <BenefitsSkeleton />;
+  if (isError) return <div>Error loading benefits</div>;
+
+  const handleClaim = (benefitId: string) => {
+    claimBenefit(benefitId);
+  };
 
   return (
     <div className="mt-10 px-4">
@@ -99,8 +30,13 @@ const BenefitsSection = () => {
       </motion.h3>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-        {benefits.map((benefit, index) => (
-          <BenefitCard key={index} benefit={benefit} index={index} />
+        {benefits && benefits.map((benefit: any, index: any) => (
+          <BenefitCard 
+            key={benefit.id} 
+            benefit={benefit} 
+            index={index}
+            onClaim={handleClaim}
+          />
         ))}
       </div>
     </div>

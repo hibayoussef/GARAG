@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+// src/App.tsx
 import { DirectionProvider } from "@radix-ui/react-direction";
 import { ToastContainer } from "react-toastify";
 import { ScrollToTop } from "./components/common/ScrollToTop";

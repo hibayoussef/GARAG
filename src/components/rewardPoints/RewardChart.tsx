@@ -6,7 +6,7 @@ import {
 } from "recharts";
 import { motion } from "framer-motion";
 
-const RewardChart = ({ progress }: { progress: number }) => {
+const RewardChart = ({ progress }: { progress: number | undefined }) => {
   const chartData = [
     {
       name: "Progress",

@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import RewardChart from "@/components/rewardPoints/RewardChart";
 import RewardHeader from "@/components/rewardPoints/RewardHeader";
@@ -6,19 +5,16 @@ import RewardLinearProgress from "@/components/rewardPoints/RewardLinearProgress
 import RewardBenefits from "@/components/rewardPoints/RewardBenefits";
 import RedeemButton from "@/components/rewardPoints/RedeemButton";
 import RewardPointsSkeleton from "@/components/rewardPoints/RewardPointsSkeleton";
+import { useRewards } from "@/hooks/useRewards.ts";
 
 const RewardPointsProgress = () => {
-  const [progress, setProgress] = useState(0);
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setProgress(75);
-      setIsLoading(false);
-    }, 1200);
-  }, []);
+  const { data: rewards, isLoading, isError } = useRewards();
 
   if (isLoading) return <RewardPointsSkeleton />;
+  if (isError) return <div>Error loading rewards</div>;
+
+  const progress =
+    rewards && Math.round((rewards.currentPoints / rewards.maxPoints) * 100);
 
   return (
     <motion.div
@@ -31,7 +27,16 @@ const RewardPointsProgress = () => {
         <RewardChart progress={progress} />
         <div className="flex-1 w-full space-y-6">
           <RewardHeader />
-          <RewardLinearProgress progress={progress} />
+          {rewards && (
+            <>
+              <RewardLinearProgress
+                progress={progress}
+                currentPoints={rewards.currentPoints}
+                maxPoints={rewards.maxPoints}
+              />
+            </>
+          )}
+
           <RewardBenefits />
           <RedeemButton />
         </div>

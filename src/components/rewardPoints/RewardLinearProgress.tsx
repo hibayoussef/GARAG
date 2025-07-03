@@ -1,9 +1,17 @@
 import { motion } from "framer-motion";
 
-const RewardLinearProgress = ({ progress }: { progress: number }) => (
+const RewardLinearProgress = ({ 
+  progress, 
+  currentPoints,
+  maxPoints
+}: { 
+  progress: number | undefined;
+  currentPoints: number;
+  maxPoints: number;
+}) => (
   <div className="space-y-2">
     <div className="flex justify-between text-sm">
-      <span className="text-gray-600 dark:text-gray-300">750 Points</span>
+      <span className="text-gray-600 dark:text-gray-300">{currentPoints} Points</span>
       <span className="font-medium text-primary dark:text-primary">
         {progress}% Complete
       </span>
@@ -21,7 +29,7 @@ const RewardLinearProgress = ({ progress }: { progress: number }) => (
     </div>
 
     <div className="text-xs text-gray-500 dark:text-gray-400">
-      You need 250 more points to reach your goal (1000 points)
+      You need {maxPoints - currentPoints} more points to reach your goal ({maxPoints} points)
     </div>
   </div>
 );
