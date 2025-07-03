@@ -154,7 +154,7 @@ const ProfileCard = ({
             className="p-4 rounded-lg bg-white/50 dark:bg-gray-800/50 border border-white/30 dark:border-gray-700/50 shadow-xs backdrop-blur-sm"
           >
             <div className="flex items-center gap-3">
-              <div className="p-3 rounded-lg bg-gradient-to-br from-blue-100/50 to-indigo-100/50 dark:from-blue-900/20 dark:to-indigo-900/20">
+              <div className="p-3 rounded-lg bg-gradient-to-br from-blue-100/50 to-indigo-100/50 dark:text-white dark:to-indigo-900/20">
                 {React.cloneElement(stat.icon, { className: "text-xl" })}
               </div>
               <div>
