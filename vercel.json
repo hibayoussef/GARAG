@@ -8,25 +8,15 @@
   ],
   "routes": [
     {
-      "src": "/",
+      "src": "/(.*)",
       "dest": "/",
       "status": 200
-    },
-
+    }
+  ],
+  "rewrites": [
     {
-      "src": "/profile",
-      "dest": "/",
-      "status": 200
-    },
-    {
-      "src": "/Bene",
-      "dest": "/",
-      "status": 200
-    },
-    {
-      "src": "/Reward",
-      "dest": "/",
-      "status": 200
+      "source": "/(.*)",
+      "destination": "/"
     }
   ]
 }
