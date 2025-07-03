@@ -43,7 +43,7 @@ const BenefitCard = ({
       <div className="absolute -left-5 -bottom-5 w-16 h-16 rounded-full bg-white/5 backdrop-blur-sm"></div>
 
       <div className="relative z-10 h-full flex flex-col">
-        <div className="w-12 h-12 rounded-lg bg-white/20 backdrop-blur-sm flex items-center justify-center mb-4 text-white text-xl">
+        <div className="w-12 h-12 rounded-lg bg-white/20 backdrop-blur-sm flex items-center justify-center mb-4 text-white text-3xl">
           {benefit.icon}
         </div>
 

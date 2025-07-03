@@ -18,12 +18,12 @@ const BenefitsSection = () => {
   };
 
   return (
-    <div className="mt-10 px-4">
+    <div className="mt-8 px-4">
       <motion.h3
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2 }}
-        className="text-2xl font-bold text-gray-800 dark:text-white mb-6 flex items-center"
+        className="text-lg font-bold text-gray-800 dark:text-white mb-6 flex items-center"
       >
         <FiGift className="mr-2 text-[#f59e0b]" />
         Your Membership Benefits
