@@ -1,3 +1,4 @@
+// RewardChart.tsx
 import {
   RadialBarChart,
   RadialBar,
@@ -16,7 +17,7 @@ const RewardChart = ({ progress }: { progress: number | undefined }) => {
   ];
 
   return (
-    <div className="relative w-48 h-48">
+    <div className="relative w-40 h-40">
       <ResponsiveContainer width="100%" height="100%">
         <RadialBarChart
           innerRadius="80%"
@@ -33,8 +34,8 @@ const RewardChart = ({ progress }: { progress: number | undefined }) => {
           />
           <RadialBar
             dataKey="value"
-            cornerRadius={8}
-            animationDuration={1800}
+            cornerRadius={6}
+            animationDuration={1500}
           />
         </RadialBarChart>
       </ResponsiveContainer>
@@ -44,11 +45,11 @@ const RewardChart = ({ progress }: { progress: number | undefined }) => {
           initial={{ scale: 0.8 }}
           animate={{ scale: 1 }}
           transition={{ delay: 0.3 }}
-          className="text-4xl font-extrabold text-gray-900 dark:text-white"
+          className="text-3xl font-bold text-gray-900 dark:text-white/90"
         >
           {progress}%
         </motion.div>
-        <div className="text-sm font-medium text-primary/80 dark:text-primary">
+        <div className="text-xs font-medium text-primary/80 dark:text-primary/90">
           Your Progress
         </div>
       </div>

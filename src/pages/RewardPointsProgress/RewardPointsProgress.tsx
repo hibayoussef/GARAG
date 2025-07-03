@@ -1,3 +1,4 @@
+// RewardPointsProgress.tsx
 import { motion } from "framer-motion";
 import RewardChart from "@/components/rewardPoints/RewardChart";
 import RewardHeader from "@/components/rewardPoints/RewardHeader";
@@ -18,14 +19,14 @@ const RewardPointsProgress = () => {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-      className="rounded-3xl p-6 shadow-2xl backdrop-blur-sm bg-gradient-to-br from-white/90 to-gray-50/90 dark:from-gray-900/80 dark:to-gray-800/80 border border-gray-200 dark:border-gray-700"
+      transition={{ duration: 0.4 }}
+      className="rounded-2xl p-5 shadow-lg backdrop-blur-sm bg-gradient-to-br from-white/95 to-gray-50/95 dark:from-gray-900/90 dark:to-gray-800/90 border border-gray-200/80 dark:border-gray-700/80"
     >
-      <div className="flex flex-col lg:flex-row gap-8 items-center">
+      <div className="flex flex-col lg:flex-row gap-6 items-center">
         <RewardChart progress={progress} />
-        <div className="flex-1 w-full space-y-6">
+        <div className="flex-1 w-full space-y-4">
           <RewardHeader />
           {rewards && (
             <>

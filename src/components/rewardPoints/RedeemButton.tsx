@@ -1,17 +1,18 @@
+// RedeemButton.tsx
 import { motion } from "framer-motion";
 import { FiGift, FiChevronRight } from "react-icons/fi";
 
 const RedeemButton = () => (
   <motion.button
-    whileHover={{ scale: 1.02 }}
-    whileTap={{ scale: 0.98 }}
-    className="w-full mt-4 py-3 px-6 rounded-xl flex items-center justify-between bg-gradient-to-r from-[#5a67bf] to-[#465FFF] hover:from-primary hover:to-indigo-600 text-white font-medium shadow-lg transition-all"
+    whileHover={{ scale: 1.01 }}
+    whileTap={{ scale: 0.99 }}
+    className="w-full mt-3 py-2.5 px-5 rounded-lg flex items-center justify-between bg-gradient-to-r from-[#5a67bf] to-[#465FFF] hover:from-primary/90 hover:to-indigo-500 text-white font-medium text-sm shadow-md transition-all"
   >
-    <span className="flex items-center gap-2">
-      <FiGift className="w-5 h-5" />
+    <span className="flex items-center gap-1.5">
+      <FiGift className="w-4 h-4" />
       Redeem Points
     </span>
-    <FiChevronRight className="w-5 h-5" />
+    <FiChevronRight className="w-4 h-4" />
   </motion.button>
 );
 
