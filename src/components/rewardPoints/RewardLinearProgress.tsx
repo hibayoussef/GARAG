@@ -1,6 +1,8 @@
 // RewardLinearProgress.tsx
 import { motion } from "framer-motion";
 
+
+
 const RewardLinearProgress = ({ 
   progress, 
   currentPoints,
