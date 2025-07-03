@@ -18,6 +18,7 @@ const RoutesComponent = () => {
   return (
     <Routes>
       <Route element={<AppLayout />}>
+        <Route path="/" element={<Navigate to="/profile" replace />} />
         <Route path="/Profile" element={<Profile />} />
         <Route path="/Bene" element={<BenefitsSection />} />
         <Route path="/Reward" element={<RewardPointsProgress />} />
